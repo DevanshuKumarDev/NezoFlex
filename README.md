@@ -31,7 +31,7 @@ It is a numerical value ranges between zero to one which helps to determine how 
 
 Cosine similarity is a metric used to measure how similar the documents are irrespective of their size. Mathematically, it measures the cosine of the angle between two vectors projected in a multi-dimensional space. The cosine similarity is advantageous because even if the two similar documents are far apart by the Euclidean distance (due to the size of the document), chances are they may still be oriented closer together. The smaller the angle, higher the cosine similarity.
 
-###Levenshtein Distance
+### Levenshtein Distance
 
 The Levenshtein distance is a string metric for measuring difference between two sequences. Informally, the Levenshtein distance between two words is the minimum number of single-character edits (i.e. insertions, deletions or substitutions) required to change one word into the other.
 We use a hybrid of both the methods in our application. The primary reason for this to improve the accuracy.
