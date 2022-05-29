@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NezoFlex</title>
+    <link rel="icon" type="image/x-icon" href="static\fevi.png">
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Auto Complete -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/css/autoComplete.min.css"
+    />
+
+    <!-- External CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='style.css') }}"
+    />
+
+    <script type="text/javascript">
+      var films = {{suggestions|tojson}};
+      $(document).ready(function(){
+        $("#myModal").modal('show');
+      });
+    </script>
+  </head>
+
+  <body id="content" style="font-family: 'Noto Sans JP', sans-serif;">
+    <div class="body-content">
+      <!-- navbar starts -->
+      <nav class="navbar sticky-top navbar-expand-lg navbar-dark ">
+        <div class="container-fluid" style="justify-content: right;">
+          <div class="navbar-nav">
+            <a class="nav-link" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="#algo">How It Works</a>
+            <a class="nav-link" href="#aboutid">About</a>
+            <a class="nav-link" href="#contactid">Contact Me</a>
+          </div>
+        </div>
+      </nav>
+      <!-- navbar ends -->
+        
+      <!-- header -->
+      <div class="ml-container" style="display: block;">
+        <div class="nine">
+          <h1>Recommend Movies<span>Get The Best Recommendations</span></h1>
+        </div>
+        <div class="form-group shadow-textarea" style="margin-top: 30px;text-align: center;color: white;">
+          <input
+            type="text"
+            name="movie"
+            class="movie form-control"
+            id="autoComplete"
+            autocomplete="off"
+            placeholder="Enter the Movie Name"
+            style="background-color: #010000;border-color:#FF008E;width: 60%;color: #f4efef"
+            required="required"
+          />
+          <br />
+        </div>
+        <!-- Enter button at top -->
+        <div class="form-group" style="text-align: center;">
+          <button
+            class="btn btn-primary btn-block movie-button"
+            style="background-color: #e50914;text-align: center;border-color: #e50914;width:120px;"
+            disabled="true"
+          >
+            Enter</button
+          ><br /><br />
+        </div>
+      </div>
+
+      <div id="loader" class="text-center"></div>
+
+      <div class="fail">
+        <center>
+          <h3>
+            OOPS! Seems like the movie you are looking for is not in our database
+          </h3>
+        </center>
+      </div>
+
+      <div class="results">
+        <center>
+          <h2 id="name" class="text-uppercase"></h2>
+        </center>
+      </div>
+     <!-- how it works section -->
+      <div class="row1" id="algo">
+        <div class="step1">
+          <section class="page-section" id="about">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">How It Works!</h2>
+                </div>
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-image"></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="subheading">Content Based Filtering</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Content-based Filtering is a Machine Learning technique that uses similarities in features to make decisions. This technique is often used in recommender systems, which are algorithms designed to advertise or recommend things to users based on knowledge accumulated about the user.</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="subheading">Machine Learning Model</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Defined a model for user item interactions where reperesentation of users and item is given</p></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image"></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="subheading">Similarity Scores</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">It is a numerical value ranges between zero to one which helps to determine how much two items are similar to each other on a scale of zero to one. This similarity score is obtained by measuring the similarity between the text details of both of the items. So, similarity score is the measure of similarity between given text details of two items</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                      <div class="timeline-image"></div>
+                      <div class="timeline-panel">
+                          <div class="timeline-heading">
+                              <h4 class="subheading">Cosine Similarity</h4>
+                          </div>
+                          <div class="timeline-body"><p class="text-muted">Cosine similarity is a metric used to measure how similar the documents are irrespective of their size. Mathematically, it measures the cosine of the angle between two vectors projected in a multi-dimensional space. The cosine similarity is advantageous because even if the two similar documents are far apart by the Euclidean distance (due to the size of the document), chances are they may still be oriented closer together. The smaller the angle, higher the cosine similarity.</p></div>
+                      </div>
+                  </li>
+                  <li>
+                    <div class="timeline-image"></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="subheading">Levenshtein Distance</h4>
+                        </div>
+                        <div class="timeline-body"><p class="text-muted">The Levenshtein distance is a string metric for measuring difference between two sequences. Informally, the Levenshtein distance between two words is the minimum number of single-character edits (i.e. insertions, deletions or substitutions) required to change one word into the other.</p></div>
+                    </div>
+                </li>
+                        
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                        <h4>That's it!</h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        </div>
+      </div>
+      <!-- about section -->
+      <div class="row1" id="aboutid">
+        <div class="card-container">
+          <div class='title-img'>
+              <div class='img'><img  class="im1" src="static\dd.jpeg" /></div>
+  
+              <div class="name">
+                  <h2>Devanshu Kumar Dev</h2>
+                  <h5 class="title">Aspiring Software Developer</h5>
+              </div>
+          </div>
+          <div class='card2 about-card'>
+              <div class='about'>
+                  <h3>About</h3>
+              </div>
+              <div class='line-break'></div>
+              <p>An Engineering student from NIT Jalandhar with a passion for tech</p>
+          </div>
+      </div>
+
+      </div>
+        <br />
+
+       <!-- contact links -->
+      <footer id="contactid">
+        <div class="rounded-social-buttons">
+                          <a class="social-button linkedin" href="https://www.linkedin.com/in/devanshu-kumar-dev-015aab201" target="_blank"><i class="fab fa-linkedin"></i></a>
+                          <a class="social-button linkedin" href="https://github.com/DevanshuKumarDev" target="_blank"><i class="fab fa-github"></i></a>
+                          <a class="social-button youtube" href="https://youtube.com/channel/UC4Ye4m4pJpag0bM5ReHG57A" target="_blank"><i class="fab fa-youtube"></i></a>
+                          <a class="social-button instagram" href="https://www.instagram.com/devanshu_kumar_dev/" target="_blank"><i class="fab fa-instagram"></i></a>
+                      </div>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
+    <script
+      type="text/javascript"
+      src="{{url_for('static', filename='autocomplete.js')}}"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="{{url_for('static', filename='recommend.js')}}"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script src="vanilla-tilt.min.js"></script>
+  </body>
+</html>
