@@ -39,3 +39,7 @@ We use a hybrid of both the methods in our application. The primary reason for t
 ## Architecture
 
 ![flow_diagram](https://github.com/DevanshuKumarDev/NezoFlex/blob/main/flow.png)
+
+## Screenshots
+
+
