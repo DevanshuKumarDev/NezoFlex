@@ -12,6 +12,7 @@
 A movie recommendation system that uses content based filtering to recommend movies.
 The details of the movies like title, genre, runtime, rating, poster, etc. are fetched using an API by TMDB.
 
+Youtube demo link: https://www.youtube.com/watch?v=8EEIJ50EXYs&ab_channel=DEVANSHUKUMARDEV
 
 ## How to run the project ?
 
