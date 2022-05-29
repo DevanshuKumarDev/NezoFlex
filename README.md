@@ -41,12 +41,12 @@ We use a hybrid of both the methods in our application. The primary reason for t
 ![flow_diagram](https://github.com/DevanshuKumarDev/NezoFlex/blob/main/flow.png)
 
 ## Screenshots
-![Alt Text]([Path_to_image](https://github.com/DevanshuKumarDev/NezoFlex/blob/main/static/screenshots/11.JPG))
+![Alt Text](https://github.com/DevanshuKumarDev/NezoFlex/blob/main/static/screenshots/11.JPG)
 
-![Alt Text]([Path_to_image](https://github.com/DevanshuKumarDev/NezoFlex/blob/main/static/screenshots/12.JPG))
+![Alt Text](https://github.com/DevanshuKumarDev/NezoFlex/blob/main/static/screenshots/12.JPG)
 
-![Alt Text]([Path_to_image](https://github.com/DevanshuKumarDev/NezoFlex/blob/main/static/screenshots/13.JPG))
+![Alt Text](https://github.com/DevanshuKumarDev/NezoFlex/blob/main/static/screenshots/13.JPG)
 
-![Alt Text]([Path_to_image](https://github.com/DevanshuKumarDev/NezoFlex/blob/main/static/screenshots/14.JPG))
+![Alt Text](https://github.com/DevanshuKumarDev/NezoFlex/blob/main/static/screenshots/14.JPG)
 
 
