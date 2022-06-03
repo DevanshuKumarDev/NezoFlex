@@ -68,13 +68,13 @@ Movies are recommended to the user by comparing the levenshtein distance between
 
 ## Technologies and concepts used
 
-1.Similarity score and levenshtein distance
+1. Similarity score and levenshtein distance
 
-2.Html,css,js for front end 
+2. HTML, CSS, JS for front end 
 
-3.Flask for backend
+3. Flask for backend
 
-4.TMDB API to get the data regarding movies.
+4. TMDB API to get the data regarding movies.
 
 There are many more, which are mentioned in requirements.txt
 
