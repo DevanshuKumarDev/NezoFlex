@@ -64,7 +64,7 @@ pytz==2022.1
 pywin32==304
 pyzmq==23.1.0
 regex==2022.6.2
-requests==2.27.1
+requests==2.28.2
 scikit-learn==1.1.1
 scipy==1.8.1
 six==1.16.0
